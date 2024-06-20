@@ -45,7 +45,7 @@ def capture_rgbd(args):
             # for img0
             cv2.imwrite(os.path.join(rgb_save_dir, f'{scene_id:06d}_{image_id:06d}.png'), color_image0)
             np.save(os.path.join(depth_save_dir, f'{scene_id:06d}_{image_id:06d}.npy'), depth_image0)
-            print(f'{scene_id:06d}_{0:06d} RGBD image saved')
+            print(f'{scene_id:06d}_{image_id:06d} RGBD image saved')
             image_id += 1
         if image_id == 3:
             print('capture done')
