@@ -118,5 +118,5 @@ if __name__ == '__main__':
         os.makedirs(os.path.join(args.save_dir, 'depth'))
     
     
-    print("Press 's' to save the rgb-d image and 'q' to quit")
+    print("Press 'c' to save the rgb-d image and 'q' to quit")
     capture_rgbd(args)
