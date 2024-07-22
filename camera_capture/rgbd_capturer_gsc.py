@@ -78,6 +78,14 @@ def capture_rgbd(args):
             if not os.path.exists(os.path.join(args.save_dir, 'depth', f'group_{group_id:06d}')):
                 os.makedirs(os.path.join(args.save_dir, 'depth', f'group_{group_id:06d}'))
             
+            # clear camera & cv2
+            k4a0.close()
+            cv2.destroyAllWindows()
+            
+            # restart camera & cv2
+            cv2.namedWindow(cv2_window_name, cv2.WINDOW_NORMAL)
+            cv2.resizeWindow(cv2_window_name, 1280, 720)
+            k4a0.start()
         # Quit
         elif key == ord('q'):
             break
