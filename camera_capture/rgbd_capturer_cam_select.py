@@ -10,6 +10,7 @@ def capture_rgbd(args):
     group_id = args.group_id
     # scene_id = args.scene_id
     cut_id = args.cut_id
+    cam_key = 0
     
     # check if the save directory exists (group_id)
     if not os.path.exists(os.path.join(args.save_dir, 'rgb', f'group_{group_id:06d}')):
@@ -20,7 +21,7 @@ def capture_rgbd(args):
     rgb_save_dir = os.path.join(args.save_dir, 'rgb')
     depth_save_dir = os.path.join(args.save_dir, 'depth')
 
-    cv2_window_name = 'rgbd - group_id: ' + str(group_id) + ' cut_id: '+ str(cut_id) + '  ' + 'C: Save & Next Cut / X: Previous Cut / G: Next Group / Q: Quit'
+    cv2_window_name = 'rgbd - cam_id: ' + str(cam_key+1) + ' group_id: ' + str(group_id) + ' cut_id: '+ str(cut_id) + '  ' + 'C: Save & Next Cut / X: Previous Cut / G: Next Group / Q: Quit / 1: cam1 / 2: cam2'
     k4a0 = PyK4A(Config(color_resolution=ColorResolution.RES_1080P,
                        depth_mode=DepthMode.WFOV_UNBINNED,
                        camera_fps=FPS.FPS_5,
@@ -43,7 +44,6 @@ def capture_rgbd(args):
     cv2.namedWindow(cv2_window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(cv2_window_name, 1280, 720)
     # image_id = 0
-    cam_key = 0
     while True:
         # for camera 0
         cam1_capture = False
