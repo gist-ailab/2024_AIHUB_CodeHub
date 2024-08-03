@@ -60,7 +60,7 @@ def capture_rgbd(args):
                     #   thread_safe=False
                 )
     # k4a1.start()
-    k4a_list = [k4a0, k4a1, k4a2, k4a3, k4a0]
+    k4a_list = [k4a0, k4a1, k4a2, k4a3, k4a4]
     
     cv2.namedWindow(cv2_window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(cv2_window_name, 1280, 720)
