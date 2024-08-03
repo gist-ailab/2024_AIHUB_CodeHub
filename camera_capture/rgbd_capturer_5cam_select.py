@@ -66,9 +66,7 @@ def capture_rgbd(args):
     cv2.resizeWindow(cv2_window_name, 1280, 720)
     # image_id = 0
     while True:
-        # for camera 0
-        cam1_capture = False
-        cam2_capture = False
+        
         key = cv2.waitKey(1) & 0xFF
         
         k4a_i = k4a_list[cam_key]
@@ -80,7 +78,7 @@ def capture_rgbd(args):
         depth_vis0 = cv2.resize(depth_vis0, (1920, 1080))
         rgbd_img0 = np.hstack([color_image0, depth_vis0])
         cv2.imshow(cv2_window_name, rgbd_img0)
-        print('group {} / cut {}'.format(group_id, cut_id))
+        print('group {} / cut {} / camera {}'.format(group_id, cut_id, cam_key))
         
         # Save RGBD Image & Move to Next Cut
         if key == ord('c'):
