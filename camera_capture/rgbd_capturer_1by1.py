@@ -20,7 +20,7 @@ def capture_rgbd(args):
         cam2_capture = False
         k4a0 = PyK4A(Config(color_resolution=ColorResolution.RES_1080P,
                        depth_mode=DepthMode.WFOV_UNBINNED,
-                       camera_fps=FPS.FPS_15,
+                       camera_fps=FPS.FPS_5,
                        color_format=ImageFormat.COLOR_BGRA32),
                   device_id=0,
                 #   thread_safe=False
@@ -51,7 +51,7 @@ def capture_rgbd(args):
                     break
                 k4a1 = PyK4A(Config(color_resolution=ColorResolution.RES_1080P,
                             depth_mode=DepthMode.WFOV_UNBINNED,
-                            camera_fps=FPS.FPS_15,
+                            camera_fps=FPS.FPS_5,
                             color_format=ImageFormat.COLOR_BGRA32),
                         device_id=1,
                     #   thread_safe=False
@@ -81,7 +81,7 @@ def capture_rgbd(args):
                             break
                         k4a2 = PyK4A(Config(color_resolution=ColorResolution.RES_1080P,
                                     depth_mode=DepthMode.WFOV_UNBINNED,
-                                    camera_fps=FPS.FPS_15,
+                                    camera_fps=FPS.FPS_5,
                                     color_format=ImageFormat.COLOR_BGRA32),
                                 device_id=2,
                             #   thread_safe=False
